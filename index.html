@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Hoạt động hè tuổi trẻ thôn Phú Nham Đông</title>
+
+<!-- Google Fonts: Playfair Display (tiêu đề) + Be Vietnam Pro (nội dung, hỗ trợ tiếng Việt đầy đủ) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============ THANH TIẾN TRÌNH DẠNG "NÉN HƯƯƠNG" (signature element) ============ -->
+  <div class="incense-progress" aria-hidden="true">
+    <div class="incense-progress__fill" id="progressFill"></div>
+    <div class="incense-progress__ember" id="progressEmber"></div>
+  </div>
+
+  <!-- ============ MENU ĐIỀU HƯỚNG ============ -->
+  <nav class="dotnav" id="dotnav" aria-label="Điều hướng slide">
+    <button class="dotnav__toggle" id="dotnavToggle" aria-label="Mở / đóng menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="dotnav__list" id="dotnavList"><!-- JS sẽ render các mục tại đây --></ul>
+  </nav>
+
+  <!-- ============ THANH CÔNG CỤ GÓC PHẢI ============ -->
+  <div class="toolbar">
+    <button class="toolbar__btn" id="autoplayBtn" aria-label="Bật/tắt tự động trình chiếu" title="Tự động trình chiếu">
+      <svg viewBox="0 0 24 24" class="icon-play"><path d="M8 5v14l11-7z"/></svg>
+      <svg viewBox="0 0 24 24" class="icon-pause" hidden><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+    </button>
+    <button class="toolbar__btn" id="fullscreenBtn" aria-label="Toàn màn hình" title="Toàn màn hình">
+      <svg viewBox="0 0 24 24"><path d="M7 14H5v5h5v-2H7v-3zM5 10h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></svg>
+    </button>
+  </div>
+
+  <!-- ============ CONTAINER CHÍNH CHỨA CÁC SLIDE ============ -->
+  <main class="slides" id="slides">
+
+    <!-- ================= SLIDE 0 — BÌA ================= -->
+    <section class="slide slide--cover" data-title="Hành trình mới">
+      <div class="slide__bg">
+        <img class="slide__bg-img" src="images/img0.jpg" alt="trại hè 2023">
+        <div class="slide__bg-overlay"></div>
+      </div>
+      <div class="slide__content cover__content reveal">
+        <p class="eyebrow reveal-child">TUỔI TRẺ THÔN PHÚ NHAM ĐÔNG· 25.07.2026</p>
+        <h1 class="cover__title reveal-child">Hội trại<br><em>Gắn Kết Vươn Xa 2</em></h1>
+        <p class="cover__subtitle reveal-child">Hành trình của tuổi trẻ Phú Nham Đông từ những con đường mới</p>
+        <button class="btn btn--start reveal-child" id="startBtn">Bắt đầu</button>
+      </div>
+      <div class="scroll-hint" aria-hidden="true"><span></span>Cuộn để xem tiếp</div>
+    </section>
+
+    <!-- ================= SLIDE 2 — SÁNG TẠO ================= -->
+    <section class="slide slide--split slide--reverse" data-title="1">
+      <div class="split__media">
+        <figure class="reveal single-figure">
+          <img loading="lazy" src="images/img5.jpg" alt="Sáng ngày 1/7/2026 Đảng uỷ xã đã công bộ quyết định sáp nhập thôn Phú Nham và Phú Nham Đông thành 1 thôn lấy tên là Phú Nham Đông. ">
+          <figcaption>buổi họp sáp nhập thôn ngày 1/7/2026</figcaption>
+        </figure>
+      </div>
+      <div class="split__text">
+        <span class="index-mark reveal">Mở Đầu</span>
+        <h2 class="reveal">Điểm hẹn<br>tháng Bảy</h2>
+        <p class="reveal">Sáng ngày 1/7/2026 Đảng uỷ xã đã công bộ quyết định sáp nhập thôn Phú Nham và Phú Nham Đông thành 1 thôn lấy tên là Phú Nham Đông. </p>
+      </div>
+    </section>
+
+    <!-- ================= SLIDE 1 — DỌN DẸP ================= -->
+    <section class="slide slide--split" data-title="2">
+      <div class="split__media">
+        <div class="gallery gallery--two">
+          <figure class="reveal">
+            <img loading="lazy" src="images/img1.jpg" alt="Nhóm đoàn viên phát dọn bụi tre rậm rạp trên đường về nguồn">
+            <figcaption>Chặt tre trong bụi</figcaption>
+          </figure>
+          <figure class="reveal" style="--delay:.15s">
+            <img loading="lazy" src="images/img2.jpg" alt="Các bạn trẻ cùng nhau kéo cành tre đã chặt ra khỏi con đường bê tông">
+            <figcaption>Cùng nhau kéo tre</figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="split__text">
+        <span class="index-mark reveal">CHUNG SỨC</span>
+        <h2 class="reveal">Hành trình<br>chuẩn bị</h2>
+        <p class="reveal">"Trước giờ G, khí thế chuẩn bị đã hừng hực khắp một góc rừng! Không ngại vất vả, các bạn đoàn viên thanh niên cùng nhau hạ những ngọn tre chắc chắn nhất để làm nguyên liệu dựng gian trại. Từng cành tre được chặt hạ gọn gàng, tỉ mỉ chính là nền móng đầu tiên cho một kỳ hội trại bùng nổ!"
+    </section>
+
+    <!-- ================= SLIDE 2 — SÁNG TẠO ================= -->
+    <section class="slide slide--split slide--reverse" data-title="3">
+      <div class="split__media">
+        <figure class="reveal single-figure">
+          <img loading="lazy" src="images/img3.jpg" alt="Các bạn đoàn viên ngồi trên sàn nhà cùng nhau vẽ và trang trí bảng hiệu, standee cho chương trình">
+          <figcaption>Tự tay hoàn thiện từng mô hình, khẩu hiệu,bảng morse,semaphore,chỉ dẫn</figcaption>
+        </figure>
+      </div>
+      <div class="split__text">
+        <span class="index-mark reveal">GẮN KẾT</span>
+        <h2 class="reveal">Cùng nhau<br>trang trí</h2>
+        <p class="reveal">"Cả nhóm quây quần bên nhau trên sàn nhà, tỉ mỉ tô vẽ từng tấm bảng và chuẩn bị chỉn chu các mô hình thanh niên cho ngày hội. Mỗi nét vẽ đơn sơ ấy đều là một phần tâm huyết, tình đồng đội gửi gắm vào chặng đường chung"    #TuổiTrẻNhiệtHuyết #ChuẩnBịTrướcGiờG #SứcTrẻThanhNiên.</p>
+      </div>
+    </section>
+
+    <!-- ================= SLIDE 3 — ĐÊM HỘI ================= -->
+    <section class="slide slide--split" data-title="4">
+      <div class="split__media">
+        <div class="gallery gallery--two">
+          <figure class="reveal">
+            <img loading="lazy" src="images/img4.jpg" alt="Các bạn trẻ tập nhảy dân vũ tập thể ngoài sân vào buổi tối">
+            <figcaption>Buổi tối rộn ràng với những điệu nhảy tập thể</figcaption>
+          </figure>
+          <figure class="reveal" style="--delay:.15s">
+            <img loading="lazy" src="images/img4,5.jpg" alt="Các bạn cùng nhau tập văn nghệ trước thềm 24/7">
+            <figcaption>Các bạn cùng nhau tập văn nghệ trước thềm 24/7</figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="split__text">
+        <span class="index-mark reveal">ĐIỆU NHẢY CỦA TUỔI TRẺ</span>
+        <h2 class="reveal">Tuy mệt<br>Mà vui</h2>
+        <p class="reveal">"Khi màn đêm buông xuống, sân nhà văn hóa lại rộn rã tiếng cười. Những điệu dân vũ gắn kết mọi người lại gần nhau hơn sau một ngày dài hoạt động.
+      </div>
+    </section>
+
+    <!-- ================= SLIDE 4 — THẮP HƯƯƠNG TRI ÂN ================= -->
+    <section class="slide slide--split slide--reverse" data-title="5">
+      <div class="split__media">
+        <div class="gallery gallery--three">
+          <figure class="reveal"><img loading="lazy" src="images/img6.jpg" alt="Ba đoàn viên thắp hương tại đài tưởng niệm"><figcaption>Nghi thức dâng hương trang nghiêm</figcaption></figure>
+          <figure class="reveal" style="--delay:.12s"><img loading="lazy" src="images/img7.jpg" alt="Đoàn viên cúi đầu cắm hương vào bát hương tại đài tưởng niệm"><figcaption>Từng nén hương được cắm cẩn trọng</figcaption></figure>
+          <figure class="reveal" style="--delay:.24s"><img loading="lazy" src="images/img8.jpg" alt="Nhóm đoàn viên áo đỏ xếp hàng chờ dâng hương"><figcaption>Xếp hàng trang nghiêm chờ đến lượt</figcaption></figure>
+        </div>
+      </div>
+      <div class="split__text">
+        <span class="index-mark reveal">TRI ÂN</span>
+        <h2 class="reveal">Thắp nén<br>hương tri ân</h2>
+        <p class="reveal">"Giữa nắng trưa, từng đoàn viên lặng lẽ dâng nén hương thơm, tưởng nhớ công ơn các anh hùng liệt sĩ — một khoảnh khắc lắng đọng giữa hành trình về nguồn."</p>
+      </div>
+    </section>
+    
+    <!-- ================= SLIDE 5 — KẾT ================= -->
+    <section class="slide slide--closing" data-title="Lời cảm ơn">
+    <!-- Thêm background ảnh -->
+    <div class="slide__bg">
+     <img class="slide__bg-img" src="images/img9.jpg" alt="">
+      <div class="slide__bg-overlay"></div>
+     </div>
+     <div class="closing__pattern" aria-hidden="true"></div>
+      <div class="slide__content closing__content reveal">
+       <p class="eyebrow reveal-child">PHÚ NHAM ĐÔNG, ngày 25 tháng 07 năm 2026</p>
+       <h2 class="closing__title reveal-child">Cảm ơn<br>đã đồng hành</h2>
+       <p class="closing__text reveal-child">"Xin gửi lời cảm ơn đến toàn thể đoàn viên, thanh niên đã cùng góp sức cho hành trình mới thêm trọn vẹn và ý nghĩa."</p>
+       <button class="btn btn--ghost reveal-child" id="backTopBtn">↑ Quay về đầu trang</button>
+     </div>
+    </section>
+
+  </main>
+
+  <!-- ============ NÚT NEXT / PREV ============ -->
+  <div class="arrownav">
+    <button class="arrownav__btn" id="prevBtn" aria-label="Slide trước">
+      <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <span class="arrownav__count"><span id="curIndex">01</span> / <span id="totalIndex">06</span></span>
+    <button class="arrownav__btn" id="nextBtn" aria-label="Slide tiếp theo">
+      <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+    </button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
